@@ -225,8 +225,8 @@ footer{
 
 @media (min-width: 1885px) {
   .projects-grid {
-    max-width: 2000px;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    max-width: 3000px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 4rem;
   }
 
