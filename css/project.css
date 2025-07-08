@@ -223,7 +223,7 @@ footer{
     background: var(--neon-pink);
 }
 
-@media (min-width: 1885px) {
+@media (min-width: 1600px) {
   .projects-grid {
     max-width: 3000px;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));

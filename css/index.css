@@ -430,7 +430,7 @@ footer{
 
 /* Responsiveness */
 
-@media (min-width: 1885px) {
+@media (min-width: 1600px) {
   .projects-grid {
     max-width: 2000px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
