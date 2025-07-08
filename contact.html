@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="./logos/contact.png">
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <button class = "hamburger-menu">☰</button>
+            <span>Portfolio</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="project.html">Projects</a>
+            <a href="#contact-form">Contact</a>
+        </div>
+    </nav>
+
+    <section class="contact-form" id="contact-form">
+        <h2 class="section-title"></h2>
+
+        <form class="contact-form-set">
+            <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" class="form-textarea" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-links" id="social-links">
+            <a href="https://github.com/Fasih60" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/fasih-rehman60/" target="_blank" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/fasih.rehman.786/" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <p class="copyright"> &copy; 2025 Fasih. All rights reserved</p>
+    </footer>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
