@@ -63,10 +63,10 @@ export const projectsData = [
   },
   {
     id: 5,
-    slug: "ember&dough",
+    slug: "ember-and-dough",
     title: "Ember & Dough",
     desc: "Ember Dough is a modern bakery website that highlights baked products, promotions, and online ordering through a clean, responsive, and user-friendly interface.",
-    tags: ["HTML", "PHP", "CSS", "CSS queries",""],
+    tags: ["HTML", "PHP", "CSS", "CSS queries"],
     link: "https://ember-dough.netlify.app/",
     image: "/foodWebsite/food-1.png",
     images: [
