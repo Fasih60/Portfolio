@@ -10,7 +10,7 @@ const devOpsAndCloud = ["Docker", "GitHub Actions", "Vercel", "Netlify", "Render
 const aiAndAutomation = ["OpenAI API", "Gemini API", "Vector Databases", "AI Chatbots", "Prompt Engineering"];
 export default function Skills() {
   return (
-    <section id="skills" className="relative w-full min-h-screen py-24 flex flex-col justify-center bg-[#050505]">
+    <section id="skills" className="relative w-full min-h-screen py-24 flex flex-col justify-center bg-[#050505] overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-900/10 rounded-full blur-[150px] pointer-events-none"></div>
 

@@ -28,12 +28,12 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-center w-full pt-4 md:pt-6 px-4 transition-all duration-300 ${scrolled ? 'pt-2 md:pt-3' : ''}`}
+      className={`fixed top-0 inset-x-0 z-50 flex justify-center pt-4 md:pt-6 px-4 md:px-6 transition-all duration-300 ${scrolled ? 'pt-2 md:pt-3' : ''}`}
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <nav className={`w-full max-w-7xl flex items-center justify-between px-6 md:px-10 py-4 rounded-3xl transition-all duration-300 ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-lg shadow-2xl border border-white/10' : 'bg-black/50 backdrop-blur-md border border-white/5'}`}>
+      <nav className={`w-full max-w-7xl flex items-center justify-between px-4 sm:px-6 md:px-10 py-3 md:py-4 rounded-2xl md:rounded-3xl transition-all duration-300 ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-lg shadow-2xl border border-white/10' : 'bg-black/50 backdrop-blur-md border border-white/5'}`}>
         
         {/* Logo */}
         <div className="flex items-center gap-2">
