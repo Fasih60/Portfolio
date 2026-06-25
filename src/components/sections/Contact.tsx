@@ -25,6 +25,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    whatsapp: "",
     inquiryType: "Start a Project",
     message: ""
   });
@@ -47,7 +48,7 @@ export default function Contact() {
       if (!response.ok) throw new Error("Failed to send message");
       
       setStatus("success");
-      setFormData({ name: "", email: "", inquiryType: "Start a Project", message: "" });
+      setFormData({ name: "", email: "", whatsapp: "", inquiryType: "Start a Project", message: "" });
       
       setTimeout(() => setStatus("idle"), 5000);
     } catch (error) {
@@ -119,6 +120,16 @@ export default function Contact() {
                 />
               </div>
               <div>
+                <label className="block text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wider">WhatsApp Number <span className="text-gray-600 lowercase">(optional)</span></label>
+                <input 
+                  type="tel" 
+                  value={formData.whatsapp}
+                  onChange={(e) => setFormData({...formData, whatsapp: e.target.value})}
+                  className="w-full bg-[#111] border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-500/50 focus:ring-1 focus:ring-red-500/50 transition-all placeholder-gray-600" 
+                  placeholder="+1 (234) 567-8900" 
+                />
+              </div>
+              <div>
                 <label className="block text-sm font-semibold text-gray-400 mb-2 uppercase tracking-wider">Inquiry Type</label>
                 <select 
                   value={formData.inquiryType}
@@ -147,7 +158,7 @@ export default function Contact() {
                 <p className="text-red-500 text-sm font-semibold">Failed to send message. Please check your connection or try again later.</p>
               )}
               {status === "success" && (
-                <p className="text-green-500 text-sm font-semibold flex items-center gap-2"><CheckCircle2 size={16}/> Message sent successfully! I will get back to you soon.</p>
+                <p className="text-red-500 text-sm font-semibold flex items-center gap-2"><CheckCircle2 size={16}/> Message sent successfully! I will get back to you soon.</p>
               )}
 
               <button 
@@ -182,10 +193,10 @@ export default function Contact() {
                <h3 className="text-xl font-bold mb-8 text-white uppercase tracking-widest">Find me online</h3>
                <div className="flex justify-center gap-6">
                  {[
-                   { icon: FacebookIcon, href: "https://facebook.com/fasih", label: "Facebook" },
-                   { icon: InstagramIcon, href: "https://instagram.com/fasih", label: "Instagram" },
+                   { icon: FacebookIcon, href: "https://www.facebook.com/fasih.rehman.7393", label: "Facebook" },
+                   { icon: InstagramIcon, href: "https://www.instagram.com/fasih.dev/", label: "Instagram" },
                    { icon: Mail, href: "mailto:mirza.fasih99@gmail.com", label: "Email" },
-                   { icon: Phone, href: "tel:+923066899891", label: "Mobile" }
+                   { icon: Phone, href: "https://wa.me/923066899891", label: "WhatsApp" }
                  ].map((social, idx) => (
                    <a 
                      key={idx} 

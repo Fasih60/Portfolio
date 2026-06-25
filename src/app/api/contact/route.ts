@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, inquiryType, message } = body;
+    const { name, email, whatsapp, inquiryType, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -27,11 +27,12 @@ export async function POST(req: Request) {
       to: "mirza.fasih99@gmail.com",
       replyTo: email,
       subject: `New Portfolio Inquiry: ${inquiryType} from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nInquiry Type: ${inquiryType}\n\nMessage:\n${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nWhatsApp: ${whatsapp || 'Not provided'}\nInquiry Type: ${inquiryType}\n\nMessage:\n${message}`,
       html: `
         <h3>New Inquiry from Portfolio</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>WhatsApp:</strong> ${whatsapp || '<i>Not provided</i>'}</p>
         <p><strong>Inquiry Type:</strong> ${inquiryType}</p>
         <br/>
         <p><strong>Message:</strong></p>
