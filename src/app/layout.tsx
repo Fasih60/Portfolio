@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Creative Developer | 3D Portfolio",
-  description: "World-class 3D portfolio of a Full Stack Web Developer. Modern, futuristic, and interactive web experiences.",
+  title: "Fasih Ur Rehman - Full Stack Developer",
+  description: "Portfolio of Fasih Ur Rehman - Full Stack Developer. Modern, futuristic, and interactive web experiences.",
 };
 
 export default function RootLayout({

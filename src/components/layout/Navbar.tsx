@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Phone, Download } from "lucide-react";
+import { Phone } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
