@@ -177,7 +177,7 @@ export default function Services() {
                   opacity: styles.opacity,
                 }}
                 transition={{ duration: 0.6, type: "spring", bounce: 0.2 }}
-                className="absolute w-[80%] md:w-[400px] h-[500px] md:h-[600px] flex flex-col cursor-grab active:cursor-grabbing rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 shadow-2xl"
+                className="absolute w-[85vw] md:w-[400px] h-[460px] md:h-[600px] flex flex-col cursor-grab active:cursor-grabbing rounded-2xl overflow-hidden bg-[#0a0a0a] border border-white/5 shadow-2xl"
                 style={{
                   transformOrigin: "center center",
                 }}
@@ -197,7 +197,7 @@ export default function Services() {
                 {/* Window Body */}
                 <div className="relative flex-1 flex flex-col pointer-events-none">
                   {/* Image Banner */}
-                  <div className="relative w-full h-[220px] md:h-[260px] overflow-hidden">
+                  <div className="relative w-full h-[180px] md:h-[260px] shrink-0 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10"></div>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
@@ -205,21 +205,21 @@ export default function Services() {
                       alt={service.title} 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 right-4 z-20 w-12 h-12 rounded-xl bg-black/50 backdrop-blur-md flex items-center justify-center text-red-500 border border-red-500/30">
-                      <service.icon size={24} />
+                    <div className="absolute top-4 right-4 z-20 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black/50 backdrop-blur-md flex items-center justify-center text-red-500 border border-red-500/30">
+                      <service.icon size={20} className="md:w-6 md:h-6" />
                     </div>
                   </div>
                   
                   {/* Text Content */}
-                  <div className="px-8 md:px-10 pb-10 pt-4 flex-1 flex flex-col relative z-20">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 group-hover:text-red-500 transition-colors duration-300">{service.title}</h3>
-                    <p className="text-gray-400 text-lg leading-relaxed flex-1">
+                  <div className="px-6 md:px-10 pb-6 md:pb-10 pt-4 flex-1 flex flex-col relative z-20">
+                    <h3 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-6 group-hover:text-red-500 transition-colors duration-300">{service.title}</h3>
+                    <p className="text-gray-400 text-sm md:text-lg leading-relaxed flex-1 overflow-hidden line-clamp-3 md:line-clamp-none">
                       {service.description}
                     </p>
                     
                     <button 
                       onClick={() => setSelectedService(service)}
-                      className="mt-8 flex items-center gap-2 text-red-500 font-bold uppercase tracking-widest text-sm pointer-events-auto hover:text-white transition-colors"
+                      className="mt-4 md:mt-8 flex items-center gap-2 text-red-500 font-bold uppercase tracking-widest text-xs md:text-sm pointer-events-auto hover:text-white transition-colors"
                     >
                       <span className="w-4 h-[1px] bg-red-600"></span> Explore Details
                     </button>
@@ -277,66 +277,70 @@ export default function Services() {
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-2xl bg-[#0a0a0a] border border-white/10 rounded-3xl overflow-hidden shadow-2xl"
+              className="w-full max-w-2xl bg-[#0a0a0a] border border-white/10 rounded-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col relative"
             >
-              <div className="relative w-full h-48 md:h-64">
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10"></div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={selectedService.image} 
-                  alt={selectedService.title} 
-                  className="w-full h-full object-cover"
-                />
-                <button 
-                  onClick={() => setSelectedService(null)}
-                  className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:text-red-500 hover:bg-white/10 transition-colors"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-              
-              <div className="p-8 md:p-10">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-red-600/10 flex items-center justify-center text-red-500 border border-red-500/20">
-                    <selectedService.icon size={24} />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white">{selectedService.title}</h3>
+              {/* Close Button - Sticky to top right */}
+              <button 
+                onClick={() => setSelectedService(null)}
+                className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white hover:text-red-500 hover:bg-white/10 transition-colors"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="overflow-y-auto flex-1 custom-scrollbar">
+                <div className="relative w-full h-48 md:h-64 shrink-0">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10"></div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={selectedService.image} 
+                    alt={selectedService.title} 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
-                <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                  {selectedService.description}
-                </p>
-                
-                <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                  <span className="w-6 h-[1px] bg-red-600"></span>
-                  What&apos;s Included
-                </h4>
-                
-                <ul className="space-y-4">
-                  {selectedService.details.map((detail, i) => (
-                    <motion.li 
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex items-center gap-4 text-gray-300"
+                <div className="p-6 md:p-10 pt-2 md:pt-4">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-red-600/10 flex items-center justify-center text-red-500 border border-red-500/20 shrink-0">
+                      <selectedService.icon size={24} />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">{selectedService.title}</h3>
+                  </div>
+                  
+                  <p className="text-gray-400 text-base md:text-lg mb-8 leading-relaxed">
+                    {selectedService.description}
+                  </p>
+                  
+                  <h4 className="text-lg md:text-xl font-bold text-white mb-6 flex items-center gap-3">
+                    <span className="w-6 h-[1px] bg-red-600"></span>
+                    What&apos;s Included
+                  </h4>
+                  
+                  <ul className="space-y-4">
+                    {selectedService.details.map((detail, i) => (
+                      <motion.li 
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.1 }}
+                        className="flex items-start gap-4 text-gray-300"
+                      >
+                        <CheckCircle2 className="text-red-500 shrink-0 mt-0.5" size={20} />
+                        <span className="text-base md:text-lg">{detail}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                  
+                  <div className="mt-10">
+                    <button 
+                      onClick={() => {
+                        setSelectedService(null);
+                        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="w-full bg-red-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-red-700 transition-all shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_25px_rgba(220,38,38,0.5)]"
                     >
-                      <CheckCircle2 className="text-red-500 shrink-0" size={20} />
-                      <span className="text-lg">{detail}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-                
-                <div className="mt-10">
-                  <button 
-                    onClick={() => {
-                      setSelectedService(null);
-                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="w-full bg-red-600 text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-red-700 transition-all shadow-[0_0_15px_rgba(220,38,38,0.3)] hover:shadow-[0_0_25px_rgba(220,38,38,0.5)]"
-                  >
-                    Start a Project
-                  </button>
+                      Start a Project
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
