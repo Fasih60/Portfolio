@@ -31,7 +31,7 @@ export default function Hero() {
       <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 py-20 flex flex-col items-start text-left">
         
         {/* Main Content */}
-        <div className="w-full max-w-2xl pt-10 lg:pt-0">
+        <div className="w-full max-w-xl pt-10 lg:pt-0 mt-16 md:mt-24 lg:mt-32">
           <motion.div 
             className="flex items-center gap-3 mb-4"
             initial={{ opacity: 0, x: -30 }}
@@ -39,11 +39,11 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="w-2.5 h-2.5 rounded-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span>
-            <span className="text-red-600 font-bold tracking-[0.2em] text-sm uppercase drop-shadow-md">Full Stack Developer</span>
+            <span className="text-red-600 font-bold tracking-[0.2em] text-xs uppercase drop-shadow-md">Full Stack Developer</span>
           </motion.div>
 
           <motion.h1 
-            className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-1 tracking-tight drop-shadow-lg"
+            className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-1 tracking-tight drop-shadow-lg"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
@@ -52,7 +52,7 @@ export default function Hero() {
           </motion.h1>
           
           <motion.h1 
-            className="text-5xl md:text-7xl lg:text-[100px] font-black text-red-600 mb-6 uppercase tracking-tighter leading-none drop-shadow-lg"
+            className="text-4xl md:text-6xl lg:text-[80px] font-black text-red-600 mb-6 uppercase tracking-tighter leading-none drop-shadow-lg"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p 
-            className="text-lg md:text-xl text-gray-300 mb-10 font-light tracking-wide leading-relaxed"
+            className="text-base md:text-lg text-gray-300 mb-10 font-light tracking-wide leading-relaxed"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
