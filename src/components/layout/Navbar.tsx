@@ -107,7 +107,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="mt-2 mx-2 flex items-center justify-center gap-2 bg-red-600 text-white px-4 py-3 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-red-700 transition-colors"
               >
-                <Phone size={16} /> Get In Touch
+                <Phone size={16} /> Contact
               </a>
             </div>
           </motion.div>

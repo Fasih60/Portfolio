@@ -55,7 +55,7 @@ export default function Skills() {
           >
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-red-600"></span>
+                <span className="w-3 h-[1px] bg-red-600"></span>
                 Frontend
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -69,7 +69,7 @@ export default function Skills() {
 
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-red-600"></span>
+                <span className="w-3 h-[1px] bg-red-600"></span>
                 Backend
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export default function Skills() {
 
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-red-600"></span>
+                <span className="w-3 h-[1px] bg-red-600"></span>
                 Tools & Platforms
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -97,7 +97,7 @@ export default function Skills() {
 
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-red-600"></span>
+                <span className="w-3 h-[1px] bg-red-600"></span>
                 DevOps & Cloud
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -111,7 +111,7 @@ export default function Skills() {
 
             <div>
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-red-600"></span>
+                <span className="w-3 h-[1px] bg-red-600"></span>
                 AI & Automation
               </h3>
               <div className="flex flex-wrap gap-3">

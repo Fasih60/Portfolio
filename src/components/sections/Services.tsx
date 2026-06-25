@@ -311,7 +311,7 @@ export default function Services() {
                   </p>
                   
                   <h4 className="text-lg md:text-xl font-bold text-white mb-6 flex items-center gap-3">
-                    <span className="w-6 h-[1px] bg-red-600"></span>
+                    <span className="w-3 h-[1px] bg-red-600"></span>
                     What&apos;s Included
                   </h4>
                   
