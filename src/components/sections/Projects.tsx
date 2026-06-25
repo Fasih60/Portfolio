@@ -59,7 +59,7 @@ export default function Projects() {
             <span className="text-red-600 font-bold tracking-[0.2em] text-sm uppercase">Portfolio</span>
             <span className="w-2.5 h-2.5 rounded-full bg-red-600 shadow-[0_0_10px_rgba(220,38,38,0.8)]"></span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-7tracking-tight pointer-events-auto">Featured <span className="text-red-600">Projects</span></h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-7 tracking-tight pointer-events-auto">Featured <span className="text-red-600">Projects</span></h2>
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent rounded-full pointer-events-auto"></div>
         </motion.div>
       </div>

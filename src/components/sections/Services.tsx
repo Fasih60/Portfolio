@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, PanInfo, AnimatePresence } from "framer-motion";
 import { Monitor, Smartphone, Cpu, ShoppingCart, ChevronLeft, ChevronRight, X, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 export default function Services() {
   const services = [
@@ -199,11 +200,12 @@ export default function Services() {
                   {/* Image Banner */}
                   <div className="relative w-full h-[180px] md:h-[260px] shrink-0 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent z-10"></div>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
+                    <Image 
                       src={service.image} 
                       alt={service.title} 
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute top-4 right-4 z-20 w-10 h-10 md:w-12 md:h-12 rounded-xl bg-black/50 backdrop-blur-md flex items-center justify-center text-red-500 border border-red-500/30">
                       <service.icon size={20} className="md:w-6 md:h-6" />
@@ -290,11 +292,12 @@ export default function Services() {
               <div className="overflow-y-auto flex-1 custom-scrollbar">
                 <div className="relative w-full h-48 md:h-64 shrink-0">
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10"></div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
+                  <Image 
                     src={selectedService.image} 
-                    alt={selectedService.title} 
-                    className="w-full h-full object-cover"
+                    alt={selectedService.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 800px"
+                    className="object-cover"
                   />
                 </div>
                 

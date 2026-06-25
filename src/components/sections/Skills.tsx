@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SkillOrbit from "@/components/canvas/SkillOrbit";
+import dynamic from "next/dynamic";
+
+const SkillOrbit = dynamic(() => import("@/components/canvas/SkillOrbit"), {
+  ssr: false,
+});
 
 const frontendSkills = ["JavaScript","React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js", "Framer Motion", "Flutter", "Dart"];
 const backendSkills = ["Node.js", "Express", "REST API", "Firebase", "MongoDB", "MySQL", "Python"];
