@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useMemo } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Text, Billboard, Sphere, Stars } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -51,6 +51,11 @@ function OrbitingSkill({ text, radius, speed, angleOffset, randomY }: { text: st
 function SkillSystem() {
   const centralRef = useRef<THREE.Mesh>(null);
   const wireframeRef = useRef<THREE.Mesh>(null);
+  const { viewport } = useThree();
+
+  // Dynamic scaling: base scale on viewport width
+  // Assuming a standard width of 10 gives scale 1. If narrower (mobile), scale down.
+  const scale = viewport.width < 10 ? viewport.width / 12 : 1;
 
   useFrame(() => {
     if (centralRef.current && wireframeRef.current) {
@@ -61,7 +66,7 @@ function SkillSystem() {
   });
 
   return (
-    <group position={[0, -0.5, 0]}>
+    <group position={[0, -0.5, 0]} scale={scale}>
       {/* Core Dark Sphere */}
       <Sphere ref={centralRef} args={[2.2, 32, 32]}>
         <meshStandardMaterial color="#050505" roughness={0.2} metalness={0.8} />

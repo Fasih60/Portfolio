@@ -1,12 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Phone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Phone, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,8 +57,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-6">
+        {/* Actions & Hamburger */}
+        <div className="flex items-center gap-4 md:gap-6">
           <a 
             href="https://wa.me/923066899891"
             target="_blank"
@@ -67,8 +68,51 @@ export default function Navbar() {
             <Phone size={15} className="text-red-500" />
             Contact
           </a>
+          
+          <button 
+            className="lg:hidden text-white hover:text-red-500 transition-colors"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-full left-4 right-4 mt-2 bg-[#0a0a0a]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden lg:hidden flex flex-col"
+          >
+            <div className="p-4 flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="px-4 py-3 text-gray-300 font-semibold hover:text-red-500 hover:bg-white/5 rounded-xl transition-all uppercase tracking-widest text-sm"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <a 
+                href="https://wa.me/923066899891"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 mx-2 flex items-center justify-center gap-2 bg-red-600 text-white px-4 py-3 rounded-xl font-bold uppercase tracking-widest text-sm hover:bg-red-700 transition-colors"
+              >
+                <Phone size={16} /> Get In Touch
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }
